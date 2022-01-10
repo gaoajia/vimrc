@@ -1,0 +1,38 @@
+syntax on	" 打开高亮
+set number	" 显示行号
+set relativenumber	" 自定义行号
+set cursorline	" 
+set wrap	" 
+set showcmd	" 
+" 搜索相关
+set wildmenu
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
+map s <nop>
+map S :w<CR>
+map Q :q<CR>
+map R :source $MYVIMRC<CR>
+" 向右分屏
+map sl :set splitright<CR>:vsplit<CR>	
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+
+
+" 插件
+call plug#begin()
+
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+set laststatus=2    " 始终显示状态栏
+
+" Airline
+let g:airline#extensions#tabline#enabled=1    " 开启 tab 栏
+let g:airline_theme='simple'	"  Airline 的样式。
+
+
