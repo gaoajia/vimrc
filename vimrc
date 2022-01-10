@@ -1,9 +1,9 @@
 syntax on	" 打开高亮
 set number	" 显示行号
 set relativenumber	" 自定义行号
-set cursorline	" 
-set wrap	" 
-set showcmd	" 
+set cursorline	 
+set wrap	 
+set showcmd	 
 " 搜索相关
 set wildmenu
 set hlsearch
@@ -12,6 +12,18 @@ set incsearch
 set ignorecase
 set smartcase
 
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on 
+filetype plugin indent on
+
+set mouse=a	" 很吊，可以使用鼠标！
+set encoding=utf-8
+let &t_ut=''
+
+" 记忆光标位置
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 map s <nop>
 map S :w<CR>
 map Q :q<CR>
