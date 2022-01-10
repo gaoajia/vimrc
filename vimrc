@@ -33,11 +33,27 @@ map sl :set splitright<CR>:vsplit<CR>
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
+" ===
+" === NERDTree
+" ===
+map ff :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1 
+let NERDTreeMapOpenExpl = ""
+let NERDTreeMapUpdir = ""
+let NERDTreeMapUpdirKeepOpen = "l"
+let NERDTreeMapOpenSplit = ""
+let NERDTreeOpenVSplit = ""
+let NERDTreeMapActivateNode = "i"
+let NERDTreeMapOpenInTab = "o"
+let NERDTreeMapPreview = ""
+let NERDTreeMapCloseDir = "n"
+let NERDTreeMapChangeRoot = "y"
 
 " 插件
 call plug#begin()
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 
