@@ -21,6 +21,8 @@ filetype plugin indent on
 set mouse=a	" 很吊，可以使用鼠标！
 set encoding=utf-8
 let &t_ut=''
+set scrolloff=5
+
 
 " 记忆光标位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -49,11 +51,20 @@ let NERDTreeMapPreview = ""
 let NERDTreeMapCloseDir = "n"
 let NERDTreeMapChangeRoot = "y"
 
+
+" ===
+" === Goyo
+" ===
+map gy :Goyo<CR>
+
+
+
 " 插件
 call plug#begin()
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/goyo.vim' " distraction free writing mode
 
 call plug#end()
 
